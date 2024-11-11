@@ -2,5 +2,9 @@
 import QrScanner from "./components/QRScanner";
 
 export default function Home() {
-  return <QrScanner />;
+  return (
+    <div>
+      <QrScanner />
+    </div>
+  );
 }
