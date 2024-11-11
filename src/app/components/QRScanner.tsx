@@ -4,7 +4,7 @@ import { Html5Qrcode } from "html5-qrcode";
 const QrScanner: React.FC = () => {
   const qrCodeRef = useRef<HTMLDivElement | null>(null);
   const [html5QrCode, setHtml5QrCode] = useState<Html5Qrcode | null>(null);
-  const [facingMode, setFacingMode] = useState("environment");
+  //   const [facingMode, setFacingMode] = useState("environment");
   const [scanning, setScanning] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [qrCodeResult, setQrCodeResult] = useState<string | null>(null); // Store the result of image scan
@@ -37,7 +37,7 @@ const QrScanner: React.FC = () => {
 
     html5QrCode
       .start(
-        { facingMode }, // Use user camera
+        { facingMode: "environment" }, // Use user camera
         config,
         (decodedText: string) => {
           console.log(`QR Code scanned: ${decodedText}`);
